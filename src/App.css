@@ -2,10 +2,11 @@
 body {
   align-items: center;
   justify-content: center;
+  background-color: grey;
 }
 
 
-.header {
+/* .header {
   height: 5rem;
   width: 100%;
   background-color: black;
@@ -14,7 +15,7 @@ body {
   justify-content: space-around;
   display: flex;
 
-  }
+  } */
 
   .footer {
     height: 5rem;
@@ -27,5 +28,5 @@ body {
     position: absolute;
     bottom: 0;
   
-    }
+    } 
 

@@ -17,9 +17,8 @@ import { Routes, Route } from "react-router-dom"
 const App = () => {
   const [cats, setCats] = useState(mockCats)
   return (
- <> <div className = "header">
+ <> 
  < Header /> 
- </div>
  <Routes>
     <Route path="/" element = {<Home/>} />
     <Route path="/catindex" element = {< CatIndex/>} />
@@ -28,11 +27,11 @@ const App = () => {
     <Route path="/catedit" element = {<CatEdit/>} />
     <Route path="*" element = {< NotFound/>} />
  </Routes> 
-  <div className = "footer">
  < Footer /> 
- </div>
+ 
  </>
   );
+  
 };
 
 export default App;

@@ -9,19 +9,19 @@ describe("<App/>", () => {
  it("renders a greeting", () => {
   render(
     <BrowserRouter>
-     <App/>
+      <App />
     </BrowserRouter>
   )
   const greeting = screen.getByText("This is Home")
-  expect(greeting).toBeInTheDocument()
+    expect(greeting).toBeInTheDocument()
  })  
   it("has a heading", () => {
     render(
-      <BrowserRouter>
-       <App/>
-      </BrowserRouter>
+    <BrowserRouter>
+       <App />
+    </BrowserRouter>
     )
-    const heading = screen.getByRole("heading", {
+  const heading = screen.getByRole("heading", {
       name: /home/i
     })
     expect(heading).toBeInTheDocument()

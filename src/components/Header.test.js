@@ -15,18 +15,18 @@ describe("<Header />", () => {
             div
         )
     })
-})
-it("has clickable links", () => {
-    const div = document.createElement("div")
-    render(
-        <BrowserRouter>
-            <Header/>
-        </BrowserRouter>
-    )
+    it("has clickable links", () => {
+        const div = document.createElement("div")
+        render(
+            <BrowserRouter>
+                <Header/>
+            </BrowserRouter>
+        )
         userEvent.click(screen.getByText("Home"))
         expect(screen.getByText("Home")).toBeInTheDocument()
         userEvent.click(screen.getByText("New Cat"))
         expect(screen.getByText("New Cat")).toBeInTheDocument()
         userEvent.click(screen.getByText("Edit Profile"))
         expect(screen.getByText("Edit Profile")).toBeInTheDocument()
+    })
 })

@@ -22,7 +22,7 @@ const Header = (args) => {
   return (
     <div>
       <Navbar {...args}>
-        <NavbarBrand href="/">Header</NavbarBrand>
+        <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
@@ -38,7 +38,7 @@ const Header = (args) => {
               <DropdownToggle nav caret>
                 Account Options
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem>Login</DropdownItem>
                 <DropdownItem>Create Account</DropdownItem>
                 <DropdownItem divider />

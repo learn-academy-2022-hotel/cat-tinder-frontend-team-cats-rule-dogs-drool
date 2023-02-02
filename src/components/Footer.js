@@ -12,7 +12,7 @@ import "../App.css";
 const Footer = (args) => {
   return (
     <>
-    <div classname="footer">
+    <div className="footer">
       <Navbar {...args}>
         <NavbarBrand href="/">Back to Home</NavbarBrand>
             <NavItem>

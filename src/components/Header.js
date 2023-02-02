@@ -38,7 +38,7 @@ const Header = (args) => {
               <DropdownToggle nav caret>
                 Account Options
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem>Login</DropdownItem>
                 <DropdownItem>Create Account</DropdownItem>
                 <DropdownItem divider />

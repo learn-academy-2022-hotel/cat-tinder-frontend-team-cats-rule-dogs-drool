@@ -22,7 +22,7 @@ const Header = (args) => {
   return (
     <div>
       <Navbar {...args}>
-        <NavbarBrand href="/">Home</NavbarBrand>
+        <NavbarBrand href="/">Header</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>

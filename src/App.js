@@ -14,6 +14,8 @@ import mockCats from "./mockCats"
 import { Routes, Route } from "react-router-dom"
 
 
+// Need to create a test for catindex and catshow once merging is complete 
+
 const App = () => {
   const [cats, setCats] = useState(mockCats)
   return (
@@ -21,8 +23,8 @@ const App = () => {
  < Header /> 
  <Routes>
     <Route path="/" element = {<Home/>} />
-    <Route path="/catindex" element = {< CatIndex/>} />
-    <Route path="/catshow" element = {< CatShow/>} />
+    <Route path="/catindex" element = {< CatIndex cats={cats} />} />
+    <Route path="/catshow/:id" element = {< CatShow cats={cats} />} />
     <Route path="/catnew" element = {< CatNew/>} />
     <Route path="/catedit" element = {<CatEdit/>} />
     <Route path="*" element = {< NotFound/>} />

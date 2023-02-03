@@ -21,7 +21,7 @@ const Header = (args) => {
 
   return (
     <div>
-      <Navbar {...args}>
+      <Navbar color="secondary" dark {...args}>
         <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

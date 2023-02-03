@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom"
 const CatShow = ({cats}) => {
  const { id } = useParams()
  let currentCat = cats?.find((cat) => cat.id === +id)
- console.log(currentCat)
  
  return (
   <main className="cat-show-cards">

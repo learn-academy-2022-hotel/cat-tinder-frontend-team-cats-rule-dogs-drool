@@ -30,8 +30,8 @@ const Header = (args) => {
               <NavLink href="/Catnew/">New Cat</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Catedit">
-                Edit Profile
+              <NavLink href="/Catindex">
+                See Cats
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>

@@ -81,7 +81,7 @@ const CatNew = ({createNewCat}) => {
     >
       Submit
     </Button>
-</div>
+  </div>
  </>
   );
 }

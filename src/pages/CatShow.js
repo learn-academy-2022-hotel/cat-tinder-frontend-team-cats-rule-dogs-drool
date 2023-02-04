@@ -1,5 +1,6 @@
 import React from "react"
 import { useParams } from "react-router-dom"
+import { NavLink } from "reactstrap"
 
 const CatShow = ({cats}) => {
  const { id } = useParams()
@@ -9,6 +10,9 @@ const CatShow = ({cats}) => {
   <main className="cat-show-cards">
     {currentCat && (
       <>
+        <NavLink to={`/catedit/${currentCat.id}`} className="nav-link">
+                Edit Cat Profile
+        </NavLink>
         <img
         alt= {`profile of a cat named ${currentCat.name}`}
         src={currentCat.image}

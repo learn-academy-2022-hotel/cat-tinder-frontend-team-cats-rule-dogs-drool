@@ -1,5 +1,4 @@
-
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import CatEdit from "./pages/CatEdit"
@@ -10,17 +9,33 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import './App.css';
 import './index.css';
-import mockCats from "./mockCats"
+//import mockCats from "./mockCats"
 import { Routes, Route } from "react-router-dom"
 
-
-// Need to create a test for catindex and catshow once merging is complete 
-
 const App = () => {
-  const [cats, setCats] = useState(mockCats)
+
+  useEffect(() => {readCats()}, [])
+
+  // Fetches all the cats in our rails seeds.rb file
+  const readCats = () => {
+    fetch("http://localhost:3000/cats")
+      .then(response => response.json())
+      .then(payload => {
+        setCats(payload)
+      })
+      .catch(errors => console.log(errors))
+  }
+  const [cats, setCats] = useState([])
 
   const createNewCat = (newCatObject) => {
-    console.log("New Cat Obj: ", newCatObject)
+    fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(newCatObject),
+      headers: {"Content-Type": "application/json"},
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => readCats())
+    .catch(errors => console.log(errors))
   }
 
   const updateCat = (cat, id) => {

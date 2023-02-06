@@ -16,6 +16,8 @@ const App = () => {
 
   useEffect(() => {readCats()}, [])
 
+  const [cats, setCats] = useState([])
+
   // Fetches all the cats in our rails seeds.rb file
   const readCats = () => {
     fetch("http://localhost:3000/cats")
@@ -25,22 +27,29 @@ const App = () => {
       })
       .catch(errors => console.log(errors))
   }
-  const [cats, setCats] = useState([])
 
+  // Creates a new cat from form and adds to database
   const createNewCat = (newCatObject) => {
     fetch("http://localhost:3000/cats", {
       body: JSON.stringify(newCatObject),
       headers: {"Content-Type": "application/json"},
       method: "POST"
     })
-    .then(response => response.json())
-    .then(payload => readCats())
-    .catch(errors => console.log(errors))
+      .then(response => response.json())
+      .then(payload => readCats())
+      .catch(errors => console.log(errors))
   }
-
+  
+  // Edit exsisting cat from form and updates to database
   const updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+    fetch(`http://localhost:3000/cats/${id}`, {
+      body: JSON.stringify(cat),
+      headers: {"Content-Type": "application/json"},
+      method: "PATCH"
+    })
+      .then(response => response.json())
+      .then(payload => readCats())
+      .catch(errors => console.log(errors))
   }
   return (
  <> 

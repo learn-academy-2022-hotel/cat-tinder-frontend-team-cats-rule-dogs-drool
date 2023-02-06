@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText,
 } from 'reactstrap';
+import logo from '../assets/Logo.png'
 
 const Header = (args) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,8 @@ const Header = (args) => {
   return (
     <div>
       <Navbar color="secondary" dark {...args}>
-        <NavbarBrand href="/">Home</NavbarBrand>
+      <img src={logo}></img>
+        <NavbarBrand href="/">Cat Tinder</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
@@ -46,7 +48,6 @@ const Header = (args) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Navbar</NavbarText>
         </Collapse>
       </Navbar>
     </div>

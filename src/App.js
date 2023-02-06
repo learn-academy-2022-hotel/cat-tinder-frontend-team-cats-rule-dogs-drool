@@ -9,7 +9,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import './App.css';
 import './index.css';
-//import mockCats from "./mockCats"
+// import mockCats from "./mockCats"
 import { Routes, Route } from "react-router-dom"
 
 const App = () => {
